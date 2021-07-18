@@ -68,7 +68,7 @@ class CouponController extends Controller
     }
 
     public function applyCoupon(Request $request){
-        $coupon = Coupon::where('code',$request->code)->first();
+        $coupon = Coupon::where('code',$request->code)->where('is_active',1)->first();
         
         if(isset($coupon)){
             return response()->json(['status'=>'success','coupon'=>$coupon]);

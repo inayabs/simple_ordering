@@ -1957,7 +1957,7 @@ __webpack_require__.r(__webpack_exports__);
       return {}.toString.call(obj).match(/\s([a-zA-Z]+)/)[1].toLowerCase();
     },
     edit: function edit(row) {
-      this.item = row;
+      this.coupon = row;
       this.drawer = true;
     },
     remove: function remove(id) {
@@ -64510,7 +64510,9 @@ var render = function() {
                         _vm._v(" "),
                         _c("td", [_vm._v(_vm._s(coupon.less_percent))]),
                         _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(coupon.is_active))]),
+                        _c("td", [
+                          _vm._v(_vm._s(coupon.is_active == 1 ? "Yes" : "No"))
+                        ]),
                         _vm._v(" "),
                         _c("td", [
                           _vm._v(

@@ -49,7 +49,7 @@
                                 <tr v-for="coupon in coupons" :key="coupon.id">
                                     <td >{{coupon.code}}</td>
                                     <td >{{coupon.less_percent}}</td>
-                                    <td >{{coupon.is_active}}</td>
+                                    <td >{{coupon.is_active==1 ? 'Yes' : 'No'}}</td>
                                     <td >{{coupon.created_at | dateformat}}</td>
                                     <td>
                                         <div class="btn-group" role="group" aria-label="Basic example">
@@ -109,7 +109,7 @@ export default {
             return ({}).toString.call(obj).match(/\s([a-zA-Z]+)/)[1].toLowerCase();
         },
         edit(row){
-            this.item = row;
+            this.coupon = row;
             this.drawer = true;
         },
         remove(id){
